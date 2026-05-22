@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Elite legal strategy and international advisory network based in London. Connecting global ambition with precise legal execution." />
+  <title>The Law Global | Intelligent Legal Strategy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #b8973a;
+      --gold-light: #d4af5a;
+      --gold-pale: #f0e0a0;
+      --dark: #0a0a0a;
+      --dark-2: #111111;
+      --dark-3: #1a1a1a;
+      --dark-4: #222222;
+      --text: #e8e0d0;
+      --text-muted: #9a9080;
+      --border: rgba(184,151,58,0.2);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.4rem 4rem;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem; font-weight: 500; letter-spacing: 0.12em;
+      color: var(--gold); text-decoration: none; text-transform: uppercase;
+    }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      color: var(--text-muted); text-decoration: none;
+      font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+      transition: color 0.25s;
+    }
+    .nav-links a:hover { color: var(--gold-light); }
+    .nav-cta {
+      background: transparent; border: 1px solid var(--gold);
+      color: var(--gold); padding: 0.55rem 1.5rem;
+      font-family: 'Montserrat', sans-serif; font-size: 0.68rem;
+      letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none;
+      cursor: pointer; transition: all 0.25s;
+    }
+    .nav-cta:hover { background: var(--gold); color: var(--dark); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 4rem;
+      position: relative;
+      background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(184,151,58,0.07) 0%, transparent 70%),
+                  linear-gradient(180deg, #0a0a0a 0%, #0d0d0d 100%);
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(184,151,58,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(184,151,58,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 80%);
+    }
+    .hero-eyebrow {
+      font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 2rem; opacity: 0.9;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 7vw, 6.5rem); font-weight: 300; line-height: 1.08;
+      letter-spacing: -0.01em; margin-bottom: 1.8rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--gold-light); }
+    .hero-sub {
+      max-width: 540px; font-size: 0.82rem; color: var(--text-muted);
+      letter-spacing: 0.04em; margin-bottom: 3rem;
+    }
+    .hero-btns { display: flex; gap: 1.2rem; flex-wrap: wrap; justify-content: center; }
+    .btn-primary {
+      background: var(--gold); color: var(--dark);
+      padding: 0.85rem 2.2rem; text-decoration: none;
+      font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+      font-family: 'Montserrat', sans-serif; font-weight: 500;
+      transition: all 0.25s;
+    }
+    .btn-primary:hover { background: var(--gold-light); }
+    .btn-secondary {
+      border: 1px solid rgba(184,151,58,0.4); color: var(--text);
+      padding: 0.85rem 2.2rem; text-decoration: none;
+      font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+      font-family: 'Montserrat', sans-serif;
+      transition: all 0.25s;
+    }
+    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+    .hero-stats {
+      display: flex; gap: 4rem; margin-top: 5rem;
+      border-top: 1px solid var(--border); padding-top: 3rem;
+    }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem; font-weight: 300; color: var(--gold-light); line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--text-muted); margin-top: 0.4rem;
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 7rem 4rem; }
+    .section-label {
+      font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.2rem;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 300; line-height: 1.15;
+    }
+
+    /* ── SERVICES ── */
+    #services { background: var(--dark-2); }
+    .services-header { text-align: center; max-width: 600px; margin: 0 auto 5rem; }
+    .services-header p { color: var(--text-muted); font-size: 0.82rem; margin-top: 1rem; }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1px; background: var(--border); max-width: 1200px; margin: 0 auto;
+    }
+    .service-card {
+      background: var(--dark-2); padding: 2.8rem 2.4rem;
+      transition: background 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .service-card::before {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+      background: var(--gold); transform: scaleX(0); transition: transform 0.35s;
+      transform-origin: left;
+    }
+    .service-card:hover { background: var(--dark-3); }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon { font-size: 1.4rem; margin-bottom: 1.2rem; }
+    .service-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-weight: 500; margin-bottom: 0.8rem; color: var(--text);
+    }
+    .service-card p { font-size: 0.78rem; color: var(--text-muted); line-height: 1.8; }
+
+    /* ── NETWORK ── */
+    #network { background: var(--dark); max-width: 1200px; margin: 0 auto; }
+    #network > div { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+    .network-tags { display: flex; flex-wrap: wrap; gap: 0.8rem; margin: 2.5rem 0; }
+    .tag {
+      border: 1px solid var(--border); padding: 0.45rem 1.1rem;
+      font-size: 0.68rem; letter-spacing: 0.12em; color: var(--text-muted);
+      transition: all 0.25s;
+    }
+    .tag:hover { border-color: var(--gold); color: var(--gold); }
+    .network-disclaimer {
+      background: var(--dark-3); border-left: 2px solid var(--gold);
+      padding: 2rem; margin-top: 1rem;
+    }
+    .network-disclaimer h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem; font-weight: 500; margin-bottom: 0.7rem; color: var(--gold-light);
+    }
+    .network-disclaimer p { font-size: 0.75rem; color: var(--text-muted); line-height: 1.85; }
+    .network-visual {
+      display: flex; align-items: center; justify-content: center;
+      position: relative; height: 420px;
+    }
+    .orb {
+      width: 260px; height: 260px; border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, rgba(184,151,58,0.18), rgba(184,151,58,0.04));
+      border: 1px solid rgba(184,151,58,0.25);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif; font-size: 1rem;
+      letter-spacing: 0.15em; color: var(--gold); text-transform: uppercase;
+    }
+    .orb-ring {
+      position: absolute; border-radius: 50%; border: 1px solid rgba(184,151,58,0.1);
+      animation: spin 18s linear infinite;
+    }
+    .orb-ring:nth-child(1) { width: 340px; height: 340px; animation-duration: 18s; }
+    .orb-ring:nth-child(2) { width: 420px; height: 420px; animation-duration: 30s; animation-direction: reverse; }
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--dark-2); }
+    .contact-inner { max-width: 1100px; margin: 0 auto; }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; margin-top: 4rem;
+    }
+    .contact-info h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem; font-weight: 300; margin-bottom: 1.5rem;
+    }
+    .contact-detail { margin-bottom: 1.4rem; }
+    .contact-detail span {
+      display: block; font-size: 0.6rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem;
+    }
+    .contact-detail a, .contact-detail p {
+      font-size: 0.85rem; color: var(--text); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .contact-detail a:hover { color: var(--gold-light); }
+    .contact-divider {
+      border: none; border-top: 1px solid var(--border); margin: 2rem 0;
+    }
+
+    /* ── FORM ── */
+    .contact-form-section h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem; font-weight: 300; margin-bottom: 0.5rem;
+    }
+    .contact-form-section p {
+      font-size: 0.78rem; color: var(--text-muted); margin-bottom: 2rem;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+    .form-group { display: flex; flex-direction: column; margin-bottom: 1rem; }
+    .form-group label {
+      font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.45rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: var(--dark-3); border: 1px solid var(--border);
+      color: var(--text); padding: 0.75rem 1rem;
+      font-family: 'Montserrat', sans-serif; font-size: 0.78rem; font-weight: 300;
+      outline: none; transition: border-color 0.25s; resize: vertical;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+    }
+    .form-group select option { background: var(--dark-3); }
+    .form-group textarea { min-height: 120px; }
+    .form-submit {
+      background: var(--gold); color: var(--dark);
+      border: none; padding: 0.9rem 2.5rem;
+      font-family: 'Montserrat', sans-serif; font-size: 0.7rem;
+      letter-spacing: 0.22em; text-transform: uppercase; font-weight: 500;
+      cursor: pointer; transition: all 0.25s; width: 100%; margin-top: 0.5rem;
+    }
+    .form-submit:hover { background: var(--gold-light); }
+    .form-success {
+      display: none; background: rgba(184,151,58,0.1);
+      border: 1px solid var(--gold); padding: 1rem 1.4rem;
+      font-size: 0.78rem; color: var(--gold-light); margin-top: 1rem;
+      text-align: center;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark); border-top: 1px solid var(--border);
+      padding: 4rem 4rem 2.5rem;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem;
+      max-width: 1200px; margin: 0 auto 3rem;
+    }
+    .footer-brand .nav-logo { font-size: 1.1rem; display: block; margin-bottom: 1rem; }
+    .footer-brand p { font-size: 0.73rem; color: var(--text-muted); line-height: 1.8; }
+    .footer-col h5 {
+      font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.2rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.65rem; }
+    .footer-col ul li a {
+      font-size: 0.76rem; color: var(--text-muted); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: var(--gold-light); }
+    .footer-bottom {
+      border-top: 1px solid var(--border); padding-top: 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+      max-width: 1200px; margin: 0 auto;
+      font-size: 0.68rem; color: var(--text-muted);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 1.5rem; }
+      .nav-links { display: none; }
+      section { padding: 5rem 1.5rem; }
+      .hero-stats { gap: 2rem; }
+      #network > div { grid-template-columns: 1fr; gap: 3rem; }
+      .network-visual { height: 280px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-bottom { flex-direction: column; gap: 0.8rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="#">The Law Global</a>
+    <ul class="nav-links">
+      <li><a href="#services">Expertise</a></li>
+      <li><a href="#network">Network</a></li>
+      <li><a href="#contact">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="#contact">Consult Now</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <p class="hero-eyebrow">London &nbsp;•&nbsp; Global &nbsp;•&nbsp; Strategic</p>
+    <h1>Intelligent Legal<br /><em>Architecture</em></h1>
+    <p class="hero-sub">We connect ambitious individuals and enterprises with a curated network of elite legal experts. Navigating complexity with precision, speed, and discretion.</p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="#services">Our Capabilities</a>
+      <a class="btn-secondary" href="#contact">Speak to an Advisor</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">40+</div>
+        <div class="stat-label">Jurisdictions</div>
+      </div>
+      <div>
+        <div class="stat-num">500+</div>
+        <div class="stat-label">Specialist Network</div>
+      </div>
+      <div>
+        <div class="stat-num">24/7</div>
+        <div class="stat-label">Global Coordination</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="services-header">
+      <p class="section-label">Strategic Capabilities</p>
+      <h2 class="section-title">We do not just advise — we orchestrate.</h2>
+      <p>Our network delivers end-to-end solutions across borders.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">✦</div>
+        <h3>International Expansion</h3>
+        <p>From corporate formation to regulatory compliance, we structure your global footprint with precision across multiple jurisdictions.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⚖</div>
+        <h3>Complex Litigation</h3>
+        <p>Access to top-tier barristers and litigators for high-stakes disputes, arbitration, and cross-border enforcement.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🛡</div>
+        <h3>Immigration &amp; Mobility</h3>
+        <p>Strategic pathways for individuals and families seeking residence, citizenship, and global mobility solutions.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💼</div>
+        <h3>M&amp;A &amp; Transactions</h3>
+        <p>Due diligence, negotiation, and closing support for cross-border mergers, acquisitions, and private equity deals.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔒</div>
+        <h3>Wealth Protection</h3>
+        <p>Structuring assets, trusts, and family offices to ensure security, privacy, and tax efficiency globally.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌐</div>
+        <h3>Digital Assets &amp; Crypto</h3>
+        <p>Legal frameworks for blockchain ventures, digital asset custody, and regulatory compliance in emerging markets.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NETWORK -->
+  <section id="network" style="padding: 7rem 4rem;">
+    <div>
+      <div>
+        <p class="section-label">A Global Ecosystem of Experts</p>
+        <h2 class="section-title">Your single point of contact — for everything.</h2>
+        <p style="color:var(--text-muted);font-size:0.82rem;margin-top:1rem;max-width:480px;">
+          The Law Global manages a vast network of SRA-regulated solicitors, BSB-regulated barristers, and international tax specialists.
+        </p>
+        <div class="network-tags">
+          <span class="tag">Corporate &amp; Commercial Law</span>
+          <span class="tag">Direct Access Barristers</span>
+          <span class="tag">International Tax &amp; Audit</span>
+          <span class="tag">Private Client &amp; Family Offices</span>
+          <span class="tag">Crisis Management &amp; PR</span>
+        </div>
+        <a class="btn-secondary" href="#contact" style="display:inline-block;margin-top:1rem;">Access the Network</a>
+
+        <div class="network-disclaimer" style="margin-top:2.5rem;">
+          <h4>Transparency &amp; Regulation</h4>
+          <p>The Law Global is a legal consultancy and advisory firm. We are not a law firm in the traditional sense and are not directly regulated by the SRA or BSB. All legal services are delivered by our network of fully qualified, SRA-regulated solicitors and BSB-regulated barristers who act directly for you.</p>
+        </div>
+      </div>
+      <div class="network-visual">
+        <div class="orb-ring"></div>
+        <div class="orb-ring"></div>
+        <div class="orb">The Law Global</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-inner">
+      <p class="section-label">Get In Touch</p>
+      <h2 class="section-title">Begin Your Consultation</h2>
+
+      <div class="contact-grid">
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <h3>Our Details</h3>
+
+          <div class="contact-detail">
+            <span>Address</span>
+            <p>One Canada Square<br />Canary Wharf<br />London E14 5AB</p>
+          </div>
+          <div class="contact-detail">
+            <span>Phone</span>
+            <a href="tel:+447886136311">+44(0) 7886 136 311</a>
+          </div>
+          <div class="contact-detail">
+            <span>Email</span>
+            <a href="mailto:info@thelawglobal.co.uk">info@thelawglobal.co.uk</a>
+          </div>
+          <div class="contact-detail">
+            <span>Availability</span>
+            <p>24/7 Global Coordination</p>
+          </div>
+          <hr class="contact-divider" />
+          <div class="contact-detail">
+            <span>Response Time</span>
+            <p>We aim to respond to all enquiries within 2 business hours.</p>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-section">
+          <h3>Send Us a Message</h3>
+          <p>Complete the form below and our team will be in touch shortly.</p>
+
+          <form id="contactForm" action="https://formsubmit.co/info@thelawglobal.co.uk" method="POST">
+            <!-- FormSubmit config -->
+            <input type="hidden" name="_subject" value="New Enquiry — The Law Global Website" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="text" name="_honey" style="display:none" />
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="First Name" placeholder="John" required />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="Last Name" placeholder="Smith" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="Email" placeholder="john@example.com" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="Phone" placeholder="+44 7000 000000" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="service">Area of Interest</label>
+              <select id="service" name="Area of Interest">
+                <option value="" disabled selected>Select a service area</option>
+                <option>International Expansion</option>
+                <option>Complex Litigation</option>
+                <option>Immigration &amp; Mobility</option>
+                <option>M&amp;A &amp; Transactions</option>
+                <option>Wealth Protection</option>
+                <option>Digital Assets &amp; Crypto</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Your Enquiry</label>
+              <textarea id="message" name="Message" placeholder="Please describe your matter briefly…" required></textarea>
+            </div>
+
+            <button type="submit" class="form-submit">Send Enquiry</button>
+          </form>
+
+          <div class="form-success" id="formSuccess">
+            ✦ &nbsp; Thank you — your enquiry has been received. We will be in touch shortly.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="nav-logo" href="#">The Law Global</a>
+        <p>Elite legal strategy and international advisory network based in London. Connecting global ambition with precise legal execution.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">Corporate Formation</a></li>
+          <li><a href="#services">Litigation</a></li>
+          <li><a href="#services">Immigration</a></li>
+          <li><a href="#services">Wealth Structuring</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#network">Our Network</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:info@thelawglobal.co.uk">info@thelawglobal.co.uk</a></li>
+          <li><a href="tel:+447886136311">+44(0) 7886 136 311</a></li>
+          <li><a href="#contact">Book Consultation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 The Law Global. All rights reserved.</span>
+      <span>London, United Kingdom</span>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth nav highlight on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 120) current = s.id;
+      });
+      navLinks.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold-light)' : '';
+      });
+    });
+
+    // FormSubmit redirect handling — show success message if ?sent=true
+    if (window.location.search.includes('sent=true') || document.referrer.includes('formsubmit')) {
+      document.getElementById('formSuccess').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
